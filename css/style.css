@@ -1,0 +1,23 @@
+body {
+  background-color: gray;
+  color: white;
+  text-align: center;
+}
+.board-container {
+  padding: auto;
+  margin: 100px 500px;
+  background-color: aquamarine;
+}
+
+table {
+  margin: auto;
+  background-color: white;
+  color: black;
+}
+
+.cell-hidde {
+  width: 40px;
+  height: 40px;
+  font-size: 1.5em;
+  border: 1px solid;
+}
