@@ -3,21 +3,40 @@ body {
   color: white;
   text-align: center;
 }
-.board-container {
-  padding: auto;
-  margin: 100px 500px;
-  background-color: aquamarine;
+.header {
+  margin-top: 50px;
+  color: lightyellow;
+  text-align: center;
 }
-
-table {
-  margin: auto;
-  background-color: white;
+h3 {
+  text-align: center;
   color: black;
 }
+.board-container {
+  position: absolute;
+  top: 150px;
+  left: calc(50% - 130px);
+}
 
-.cell-hidde {
-  width: 40px;
-  height: 40px;
+/* table > [data-status='hidden'] {
+  margin: auto;
+  background-color: white;
+
+  visibility: hidden;
+} */
+/* table > [data-status='mine'] {
+  margin: auto;
+  background-color: red;
+
+  visibility: hidden;
+} */
+/* .hidden {
+  display: none;
+} */
+.cell {
+  width: 60px;
+  height: 60px;
+  color: black;
   font-size: 1.5em;
-  border: 1px solid;
+  border: 1px solid black;
 }
