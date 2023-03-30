@@ -8,7 +8,7 @@ function renderBoard(mat) {
       const cell = mat[i][j]
       const className = getClassName({ i, j })
 
-      strHTML += `<td onclick="onCellClicked(this,${i},${j})" class="${className}">${''}</td>`
+      strHTML += `<td onKeyup="OnRightClick(event)"  onclick="onCellClicked(this,${i},${j})" class="${className}">${''}</td>`
       // const elCell = document.querySelector(`.${className}`)
       // console.log(elCell)
     }

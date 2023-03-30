@@ -47,6 +47,15 @@ function createBoard(ROWS, COLS) {
   setMinesNegsCount(board)
   return board
 }
+// function OnRightClick(ev) {
+//   console.log(ev)
+//   if (ev.key === `contextmenu`)
+//     addEventListener('contextmenu', (event) => {
+//       // renderCell({ i, j }, '🚩')
+//       event.preventDefault()
+//     })
+//   // ev.preventDefault()
+// }
 
 function onCellClicked(elCell, i, j) {
   if (!gGame.isOn) return
@@ -88,6 +97,8 @@ function onGamePlay(i, j, cell) {
     renderCell({ i, j }, inCell)
     cell.isShown = true
   } else if (cell.minesAroundCount === 0) {
+    cell.isShown = true
+    renderCell({ i, j }, 0)
     countNegsAroundZero(i, j)
   }
 }
@@ -122,8 +133,14 @@ function countNegs(mat, rowIdx, colIdx) {
 
 function countNegsAroundZero(cellI, cellJ) {
   for (var i = cellI - 1; i <= cellI + 1; i++) {
+    if (i < 0 || i >= gBoard.length) continue
     for (var j = cellJ - 1; j <= cellJ + 1; j++) {
       var cell = gBoard[i][j]
+      if (j < 0 || j >= gBoard[i].length) continue
+      if (i === cellI && j === cellJ) continue
+      if (cell.isMine === true) continue
+      renderCell({ i, j }, cell.minesAroundCount)
+      cell.isShown = true
     }
   }
 }
