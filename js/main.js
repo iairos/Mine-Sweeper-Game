@@ -213,15 +213,29 @@ function closeModal() {
   gGame.markedCount = 0
   gGame.shownCount = 0
   gCountTimesClicked = 0
+  var elTimerDiv = document.querySelector('.timer')
+  elTimerDiv.textContent = `00:00`
 }
 
 function createTimer() {
-  if (gGame.isClicked === false) return
-  var seconds = 0
   var elTimerDiv = document.querySelector('.timer')
+
+  var startTime = Date.now() // get the current time in milliseconds
   var timer = setInterval(function () {
-    seconds++
-    elTimerDiv.textContent = 'Elapsed time: ' + seconds + ' seconds'
+    if (!gGame.isOn) {
+      // stop the timer if gGame.isOn is false
+      clearInterval(timer)
+      console.log('Timer stopped.')
+      return
+    }
+
+    var elapsedTime = Date.now() - startTime
+    var seconds = Math.floor(elapsedTime / 1000)
+    var minutes = Math.floor(seconds / 60)
+    seconds = seconds % 60
+    var displayMinutes = (minutes < 10 ? '0' : '') + minutes.toString()
+    var displaySeconds = (seconds < 10 ? '0' : '') + seconds.toString()
+    var displayTime = displayMinutes + ':' + displaySeconds
+    elTimerDiv.textContent = displayTime
   }, 1000)
-  if (gGame.isOn === false) clearInterval(timer)
 }
