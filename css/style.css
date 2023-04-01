@@ -2,21 +2,46 @@ body {
   background-color: gray;
   color: white;
   text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.game-container {
+  background-color: rgb(15, 15, 15);
+  padding-bottom: 500px;
+  width: 500px;
+  margin: auto;
+  border-radius: 10px;
+}
+.iairos {
+  position: absolute;
+  bottom: 0px;
+  left: 45%;
 }
 .header {
   margin: auto;
   margin-top: 50px;
+  margin-bottom: 10px;
   height: 30px;
   width: 400px;
   padding: 20px;
-  color: rgb(229, 15, 15);
-  background-color: black;
+  color: white;
   font-weight: bold;
-  font-family: Arial, Helvetica, sans-serif;
   border-radius: 10px;
 }
-.timer {
+.header span {
+  background-color: white;
+  border-radius: 50%;
+  padding: 3px;
+}
+.imoji {
+  background-color: white;
   margin: auto;
+  height: 30px;
+  width: 50px;
+  padding: 5px;
+  border-radius: 5px;
+}
+.timer {
+  display: inline-block;
   height: 20px;
   width: 50px;
   padding: 10px;
@@ -24,23 +49,26 @@ body {
   font-style: italic;
   font-weight: bold;
   border-radius: 5px;
-  background-color: rgb(21, 19, 3);
+  color: red;
 }
-h3 {
+.mines-left {
+  display: inline-block;
   margin: auto;
   text-align: center;
-  color: black;
+  color: white;
   font-size: larger;
-  font-family: Arial, Helvetica, sans-serif;
 }
 .board-container {
-  margin-top: 35px;
+  margin-top: 100px;
   position: absolute;
   top: 150px;
   left: calc(50% - 130px);
 }
 
 .cell {
+  border-radius: 5px;
+  background-color: rgb(246, 246, 32);
+  cursor: pointer;
   width: 60px;
   height: 60px;
   color: black;
@@ -54,17 +82,21 @@ h3 {
   height: 250px;
   background-color: rgb(222, 226, 228);
   color: black;
-  font-size: 32px;
-
+  font-size: 28px;
   position: absolute;
   top: 150px;
   left: calc(30% - 150px);
+  border-radius: 10px;
 }
 
 .restart-btn {
+  position: absolute;
   margin-top: 20px;
   background-color: black;
   color: rgb(230, 221, 221);
   padding: 10px;
   cursor: pointer;
+  bottom: 0px;
+  border-radius: 5px;
+  left: 40%;
 }

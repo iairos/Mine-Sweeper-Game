@@ -14,7 +14,8 @@ var gGame = {
   secsPassed: 0,
   isClicked: false,
 }
-var gElMinesLeft = document.querySelector('h3 span')
+var gElMinesLeft = document.querySelector('.mines-left span')
+var gElImoji = document.querySelector('.imoji')
 
 function onInit() {
   gGame.isOn = true
@@ -110,6 +111,7 @@ function onCellClicked(elCell, i, j) {
   else if (cell.isMine && gCountTimesClicked >= 2) {
     gameOver()
     gGame.isOn = false
+    gElImoji.textContent = '😭'
     openModal(`Game Over`)
 
     return
@@ -194,6 +196,7 @@ function checkVictory() {
     if (gGame.markedCount !== mines) {
       openModal(`You actually coulve won but didnt mark the mines`)
     } else {
+      gElImoji.textContent = '😀'
       openModal('Victory!!!')
     }
   }
@@ -215,6 +218,7 @@ function closeModal() {
   gCountTimesClicked = 0
   var elTimerDiv = document.querySelector('.timer')
   elTimerDiv.textContent = `00:00`
+  gElImoji.textContent = '😶'
 }
 
 function createTimer() {

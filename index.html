@@ -8,16 +8,21 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body onload="onInit()">
-    <div>
-      <h2 class="header">Mine Sweeper Game 💣</h2>
-      <h3>Mines Left: <span></span></h3>
-      <div class="timer"></div>
+    <div class="game-container">
+      <div>
+        <h2 class="header">Mine Sweeper Game <span> 💣 </span></h2>
+        <h2 class="imoji"><span>😶</span></h2>
+        <h3 class="mines-left">Mines Left: <span></span></h3>
+        <h3 class="timer"></h3>
+      </div>
+      <div class="board-container"></div>
+      <div class="modal">
+        <h3 class="msg"></h3>
+        <button class="restart-btn" onclick="onInit()">Play Again</button>
+      </div>
+      <span class="iairos"> © iair schorr 2023</span>
     </div>
-    <div class="board-container"></div>
-    <div class="modal">
-      <h3 class="msg"></h3>
-      <button class="restart-btn" onclick="onInit()">Play Again</button>
-    </div>
+
     <script src="js/main.js"></script>
     <script src="js/util.js"></script>
   </body>
