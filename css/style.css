@@ -18,25 +18,31 @@ h3 {
   left: calc(50% - 130px);
 }
 
-/* table > [data-status='hidden'] {
-  margin: auto;
-  background-color: white;
-
-  visibility: hidden;
-} */
-/* table > [data-status='mine'] {
-  margin: auto;
-  background-color: red;
-
-  visibility: hidden;
-} */
-/* .hidden {
-  display: none;
-} */
 .cell {
   width: 60px;
   height: 60px;
   color: black;
   font-size: 1.5em;
   border: 1px solid black;
+}
+.modal {
+  display: none;
+  border: solid 3px grey;
+  width: 300px;
+  height: 250px;
+  background-color: rgb(222, 226, 228);
+  color: black;
+  font-size: 32px;
+
+  position: absolute;
+  top: 150px;
+  left: calc(30% - 150px);
+}
+
+.restart-btn {
+  margin-top: 20px;
+  background-color: black;
+  color: rgb(230, 221, 221);
+  padding: 10px;
+  cursor: pointer;
 }

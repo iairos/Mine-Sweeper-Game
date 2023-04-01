@@ -7,8 +7,8 @@ function renderBoard(mat) {
     for (var j = 0; j < mat[0].length; j++) {
       const cell = mat[i][j]
       const className = getClassName({ i, j })
-
-      strHTML += `<td onKeyup="OnRightClick(event)"  onclick="onCellClicked(this,${i},${j})" class="${className}">${''}</td>`
+      // var mineClass = cell.isMine ? ' mine' : ''
+      strHTML += `<td  onclick="onCellClicked(this,${i},${j})" oncontextmenu=" onCellRightClicked(this, ${i}, ${j});return false;" class=" ${className}">${EMPTY}</td>`
       // const elCell = document.querySelector(`.${className}`)
       // console.log(elCell)
     }
@@ -17,16 +17,6 @@ function renderBoard(mat) {
   strHTML += '</tbody></table>'
   const elContainer = document.querySelector(`.board-container`)
   elContainer.innerHTML = strHTML
-}
-
-function setMinePos(board, ROWS) {
-  var randRowIdx
-  var randCollIdx
-  for (var i = 0; i < ROWS / 2; i++) {
-    randRowIdx = getRandomInt(0, ROWS)
-    randCollIdx = getRandomInt(randRowIdx, ROWS)
-    board[randRowIdx][randCollIdx].isMine = true
-  }
 }
 
 function getRandomInt(min, max) {
